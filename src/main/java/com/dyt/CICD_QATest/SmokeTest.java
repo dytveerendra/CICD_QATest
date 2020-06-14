@@ -35,7 +35,7 @@ public class SmokeTest {
 		
 		driver.findElement(By.name("txtUsername")).sendKeys("user02");
 		driver.findElement(By.name("txtPassword")).sendKeys("TM1234");
-		driver.findElement(By.name("//input[@type='submit']")).click();
+		driver.findElement(By.name("btnLogin")).click();
 		
 		driver.quit();
 	}
