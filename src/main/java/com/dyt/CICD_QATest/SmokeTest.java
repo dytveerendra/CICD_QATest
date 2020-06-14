@@ -1,18 +1,43 @@
 package com.dyt.CICD_QATest;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SmokeTest {
 	
 	@Test
-	public void TC01() {
-		//http://13.232.62.73:8080/CICD_DevTest/
-		System.out.println("TC02");
+	public void TC01_VerifyTitle() {
+		
+		System.setProperty("webDriver.chrome.driver", System.getProperty("user.dir")+"/servers/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get("//http://13.232.62.73:8080/CICD_DevTest/");
+		
+		String expTitle = driver.getTitle();
+		Assert.assertEquals(expTitle, "DevelopYou");
+		driver.quit();
+		
 	}
 	
 	@Test
-	public void TC02() {
-		System.out.println("TC02");
+	public void TC02_VerifyLoginPage() {
+		System.setProperty("webDriver.chrome.driver", System.getProperty("user.dir")+"/servers/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get("//http://13.232.62.73:8080/CICD_DevTest/");
+		
+		driver.findElement(By.name("txtUsername")).sendKeys("user02");
+		driver.findElement(By.name("txtPassword")).sendKeys("TM1234");
+		driver.findElement(By.name("//input[@type='submit']")).click();
+		
+		driver.quit();
 	}
 
 }
