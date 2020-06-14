@@ -13,7 +13,7 @@ public class SmokeTest {
 	@Test
 	public void TC01_VerifyTitle() {
 		
-		System.setProperty("webDriver.chrome.driver", System.getProperty("user.dir")+"/servers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/servers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -27,7 +27,7 @@ public class SmokeTest {
 	
 	@Test
 	public void TC02_VerifyLoginPage() {
-		System.setProperty("webDriver.chrome.driver", System.getProperty("user.dir")+"/servers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/servers/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
