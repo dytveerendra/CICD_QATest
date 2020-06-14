@@ -6,7 +6,8 @@ public class SmokeTest {
 	
 	@Test
 	public void TC01() {
-		System.out.println("TC01");
+		//http://13.232.62.73:8080/CICD_DevTest/
+		System.out.println("TC02");
 	}
 	
 	@Test
