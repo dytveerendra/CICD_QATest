@@ -17,7 +17,7 @@ public class SmokeTest {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("//http://13.232.62.73:8080/CICD_DevTest/");
+		driver.get("http://13.232.62.73:8080/CICD_DevTest/");
 		
 		String expTitle = driver.getTitle();
 		Assert.assertEquals(expTitle, "DevelopYou");
@@ -31,7 +31,7 @@ public class SmokeTest {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("//http://13.232.62.73:8080/CICD_DevTest/");
+		driver.get("http://13.232.62.73:8080/CICD_DevTest/");
 		
 		driver.findElement(By.name("txtUsername")).sendKeys("user02");
 		driver.findElement(By.name("txtPassword")).sendKeys("TM1234");
