@@ -37,6 +37,9 @@ public class SmokeTest {
 		driver.findElement(By.name("txtPassword")).sendKeys("TM1234");
 		driver.findElement(By.name("btnLogin")).click();
 		
+		String expTitle = driver.getTitle();
+		Assert.assertEquals(expTitle, "DevelopYou Home");
+		
 		driver.quit();
 	}
 
